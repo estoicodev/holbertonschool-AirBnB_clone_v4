@@ -143,21 +143,11 @@ $(function () {
   });
 
   $('section.filters button').click(function () {
-    const data = {
-      amenities: amenitiesIds,
-      states: statesIds,
-      cities: citiesIds
-    };
-    const dataJSON = JSON.stringify(data);
-    $.ajax({
-      url: 'http://localhost:5001/api/v1/places_search/',
-      type: 'POST',
-      contentType: 'application/json',
-      data: dataJSON,
-      success: function (placesFiltered) {
-        $('section.places').empty();
-        InsertPlacesInSectionPlaces(placesFiltered);
-      }
-    });
+    //    debugger
+    const amnts = Object.keys(amenities)
+    const sts = Object.keys(states)
+    const cts = Object.keys(cities)
+    $('.places > article').remove();
+    showPlaces({'amenities': amnts, 'states': sts, 'cities': cts});
   });
 });
