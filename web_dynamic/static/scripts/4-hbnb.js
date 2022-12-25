@@ -76,7 +76,7 @@ $(function () {
     if (entertainment.length > 0) {
       const newText = entertainment.join(', ');
       newText.length > 32
-        ? $('.amenities h4').text(`${newText.slice(0, 32)}...`)
+        ? $('.amenities h4').text(`${newText.slice(0, 28)}...`)
         : $('.amenities h4').text(newText);
     } else {
       $('.amenities h4').html('&nbsp;');
